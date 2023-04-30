@@ -10,11 +10,29 @@
   <label for="lname">password:</label><br>
   <input type="text" id="lname" name="lname" [(ngModel)]="password" ><br><br>
 
-  <button (click)="login" >login</button>
+  <button (click)="login()" >login</button>
 
 </form>
 
-<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+<table class = "table table-stripped">
+  <thead>
+  <tr>
+  <th scope = "col">Book title</th>
+  <th scope = "col">author</th>
+  </tr>
+  </thead>
+<tbody>
+<tr *ngFor="let element of data; index as i">
+  <th scope=" row">{{element.title}}</th>>
+  <td>
+    {{element.author}}
+  </td>
+</tr>
+</tbody>
+</table>
+
+
+
 
 </body>
 </html>
